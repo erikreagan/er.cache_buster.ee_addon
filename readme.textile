@@ -22,7 +22,7 @@ h2. Usage
 
 There are 2 parameters. One is required and the other is optional.
 
-<pre><code>{exp:cache_buster file="/css/style.css"}</pre></code>
+<pre><code>{exp:cache_buster file="/css/style.css"}</code></pre>
 
 This will return
 
