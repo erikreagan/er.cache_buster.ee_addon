@@ -1,0 +1,46 @@
+h1. Cache Buster
+
+An ExpressionEngine plugin that adds a simple cache buster to your flat file references
+
+
+h2. Compatibility
+
+* ExpressionEngine 1.6.x
+
+
+h2. Purpose
+
+Using ExpressionEngine's CSS template provides a nice cache buster string of the most recent time
+the template was saved to the database. This is quite handy but still requires EE to process the template.
+
+This plugin will take a file path and use PHP to check the modification time returning a cache busting
+string like ExpressionEngine's. This allows you to server flat files from your server without having
+ExpressionEngine's template parser run through the code first. It is very simple to use.
+
+
+h2. Usage
+
+There are 2 parameters. One is required and the other is optional.
+
+<pre><code>{exp:cache_buster file="/css/style.css"}</pre></code>
+
+This will return
+
+<pre><code>/css/style.css?v=1266264101</code></pre>
+
+Where "1266264101" is the UNIX timestamp of the last time /css/style.css was saved to the server.
+
+You can change the separator between the file and the timestamp with the use of separator="" in the tag.
+
+<pre><code>{exp:cache_buster file="/css/style.css" separator="?"}</code></pre>
+
+This will return
+
+<pre><code>/css/style.css?1266264101</code></pre>
+
+
+h2. Change Log
+
+*+Feb 15th, 2010: 1.0.0+*
+
+* Initial Release
