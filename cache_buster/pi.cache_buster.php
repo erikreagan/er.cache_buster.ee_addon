@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors',E_ALL);
+// ini_set('display_errors',E_ALL);
 
 /**
  * Cache Buster
