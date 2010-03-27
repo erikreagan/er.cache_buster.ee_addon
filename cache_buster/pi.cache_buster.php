@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors',E_ALL);
 
 /**
  * Cache Buster
@@ -7,7 +8,7 @@
  * system/plugins/ folder in your ExpressionEngine installation.
  *
  * @package CacheBuster
- * @version 1.0.1
+ * @version 1.1.0
  * @author Erik Reagan http://erikreagan.com
  * @copyright Copyright (c) 2010 Erik Reagan
  * @see http://erikreagan.com/projects/cache_buster/
@@ -16,7 +17,7 @@
 
 $plugin_info       = array(
    'pi_name'        => 'Cache Buster',
-   'pi_version'     => '1.0.1',
+   'pi_version'     => '1.1.0',
    'pi_author'      => 'Erik Reagan',
    'pi_author_url'  => 'http://erikreagan.com',
    'pi_description' => 'Adds a simple cache buster to your flat file references',
@@ -30,11 +31,27 @@ class Cache_buster
 
    function Cache_buster()
    {
-      global $REGX, $TMPL;
+      
+      if (version_compare(APP_VER, '2', '<'))
+      {
+         
+         global $REGX, $TMPL;
 
-      $file = ($TMPL->fetch_param('file') != '') ? $TMPL->fetch_param('file') : FALSE ;
-      $separator = ($TMPL->fetch_param('separator') != '') ? $TMPL->fetch_param('separator') : '?v=' ;
-      $time = filemtime($_SERVER['DOCUMENT_ROOT'].$REGX->xss_clean(html_entity_decode($file)));
+         $file = ($TMPL->fetch_param('file') != '') ? $TMPL->fetch_param('file') : FALSE ;
+         $separator = ($TMPL->fetch_param('separator') != '') ? $TMPL->fetch_param('separator') : '?v=' ;
+         $root_path = ($TMPL->fetch_param('root_path') != '') ? $TMPL->fetch_param('separator') : $_SERVER['DOCUMENT_ROOT'] ;
+         $time = filemtime($root_path.$REGX->xss_clean(html_entity_decode($file)));
+         
+      } else {
+         
+         $this->EE =& get_instance();
+         
+         $file = ($this->EE->TMPL->fetch_param('file') != '') ? $this->EE->TMPL->fetch_param('file') : FALSE ;
+         $separator = ($this->EE->TMPL->fetch_param('separator') != '') ? $this->EE->TMPL->fetch_param('separator') : '?v=' ;
+         $root_path = ($this->EE->TMPL->fetch_param('root_path') != '') ? $this->EE->TMPL->fetch_param('separator') : $_SERVER['DOCUMENT_ROOT'] ;
+         $time = filemtime($root_path.$this->EE->security->xss_clean(html_entity_decode($file)));
+         
+      }
 
       
       if ($file)

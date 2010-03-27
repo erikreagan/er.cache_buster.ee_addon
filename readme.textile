@@ -6,6 +6,12 @@ An ExpressionEngine plugin that adds a simple cache buster to your flat file ref
 h2. Compatibility
 
 * ExpressionEngine 1.6.x
+* ExpressionEngine 2.x
+
+h2. Installation
+
+* *ExpressionEngine 1.6.x:* upload the <code>er_tweet_me/pi.er_tweet_me.php</code> file to the <code>system/plugins</code> directory
+* *ExpressionEngine 2.x:* upload the <code>er_tweet_me</code> directory to the <code>system/expressionengine/third_party</code> directory
 
 
 h2. Purpose
@@ -20,7 +26,7 @@ ExpressionEngine's template parser run through the code first. It is very simple
 
 h2. Usage
 
-There are 2 parameters. One is required and the other is optional.
+There are 3 parameters. One is required and the other two are optional.
 
 <pre><code>{exp:cache_buster file="/css/style.css"}</code></pre>
 
@@ -38,10 +44,21 @@ This will return
 
 <pre><code>/css/style.css?1266264101</code></pre>
 
+*Server Root*
+
+If your file isn't being read by the plugin then the server root might not be the right path. The plugin assumes that your file will reside on your server's DOCUMENT_ROOT variable. If this is not accurate you can manually define the root with the root_path parameter. *Do not include a trailing slash.*
+
+<pre><code>{exp:cache_buster file="/css/style.css" root_path="/home/mysite/subdirectory/templates"}</code></pre>
+
 
 h2. Change Log
 
-+*Mar 27th, 2010: 1.0.1*+
++*Mar 27th, 2010: 1.1.0*+
+
+* Feature: added root_path parameter for manually entering server root
+* Feature: EE2.x compatibility added
+
+*Mar 27th, 2010: 1.0.1*
 
 * Assigned license to add-on: "Creative Commons Attribution-No Derivative Works 3.0 Unported":http://creativecommons.org/licenses/by-nd/3.0/ 
 
