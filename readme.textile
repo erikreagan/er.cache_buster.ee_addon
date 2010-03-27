@@ -41,6 +41,10 @@ This will return
 
 h2. Change Log
 
-*+Feb 15th, 2010: 1.0.0+*
++*Mar 27th, 2010: 1.0.1*+
+
+* Assigned license to add-on: "Creative Commons Attribution-No Derivative Works 3.0 Unported":http://creativecommons.org/licenses/by-nd/3.0/ 
+
+*Feb 15th, 2010: 1.0.0*
 
 * Initial Release

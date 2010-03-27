@@ -7,15 +7,16 @@
  * system/plugins/ folder in your ExpressionEngine installation.
  *
  * @package CacheBuster
- * @version 1.0.0
+ * @version 1.0.1
  * @author Erik Reagan http://erikreagan.com
  * @copyright Copyright (c) 2010 Erik Reagan
  * @see http://erikreagan.com/projects/cache_buster/
+ * @license http://creativecommons.org/licenses/by-nd/3.0/ Creative Commons Attribution-No Derivative Works 3.0 Unported
  */
 
 $plugin_info       = array(
    'pi_name'        => 'Cache Buster',
-   'pi_version'     => '1.0.0',
+   'pi_version'     => '1.0.1',
    'pi_author'      => 'Erik Reagan',
    'pi_author_url'  => 'http://erikreagan.com',
    'pi_description' => 'Adds a simple cache buster to your flat file references',
