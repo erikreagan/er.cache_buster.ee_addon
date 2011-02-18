@@ -53,7 +53,11 @@ If your file isn't being read by the plugin then the server root might not be th
 
 h2. Change Log
 
-+*Mar 27th, 2010: 1.1.0*+
++*Feb 17th, 2011: 1.1.1*+
+
+* Bug: Fixed bug where root_path wasn't set correctly
+
+*Mar 27th, 2010: 1.1.0*
 
 * Feature: added root_path parameter for manually entering server root
 * Feature: EE2.x compatibility added
