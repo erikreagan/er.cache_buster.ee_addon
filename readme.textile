@@ -10,8 +10,10 @@ h2. Compatibility
 
 h2. Installation
 
-* *ExpressionEngine 1.6.x:* upload the <code>/system/expressionengine/third_party/cache_buster/pi.cache_buster.php</code> file to the <code>system/plugins</code> directory
-* *ExpressionEngine 2.x:* upload the <code>/system/expressionengine/third_party/cache_buster</code> directory to the <code>system/expressionengine/third_party</code> directory
+Note: The same file is used for both ExpressionEngine 1 and ExpressionEngine 2.
+
+* *ExpressionEngine 1.6.x:* Upload the <code>/system/expressionengine/third_party/cache_buster/pi.cache_buster.php</code> file to the <code>system/plugins</code> directory.
+* *ExpressionEngine 2.x:* Upload the <code>/system/expressionengine/third_party/cache_buster</code> directory to the <code>system/expressionengine/third_party</code> directory.
 
 
 h2. Purpose
