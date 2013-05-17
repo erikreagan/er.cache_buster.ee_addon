@@ -10,8 +10,8 @@ h2. Compatibility
 
 h2. Installation
 
-* *ExpressionEngine 1.6.x:* upload the <code>cache_buster/pi.cache_buster.php</code> file to the <code>system/plugins</code> directory
-* *ExpressionEngine 2.x:* upload the <code>cache_buster</code> directory to the <code>system/expressionengine/third_party</code> directory
+* *ExpressionEngine 1.6.x:* upload the <code>/system/expressionengine/third_party/cache_buster/pi.cache_buster.php</code> file to the <code>system/plugins</code> directory
+* *ExpressionEngine 2.x:* upload the <code>/system/expressionengine/third_party/cache_buster</code> directory to the <code>system/expressionengine/third_party</code> directory
 
 
 h2. Purpose
@@ -64,7 +64,7 @@ h2. Change Log
 
 *Mar 27th, 2010: 1.0.1*
 
-* Assigned license to add-on: "Creative Commons Attribution-No Derivative Works 3.0 Unported":http://creativecommons.org/licenses/by-nd/3.0/ 
+* Assigned license to add-on: "Creative Commons Attribution-No Derivative Works 3.0 Unported":http://creativecommons.org/licenses/by-nd/3.0/
 
 *Feb 15th, 2010: 1.0.0*
 
