@@ -27,9 +27,9 @@ $plugin_info       = array(
 class Cache_buster
 {
 
-   var $return_data  = "";
+   public $return_data  = "";
 
-   function Cache_buster()
+   public function Cache_buster()
    {
       
       if (version_compare(APP_VER, '2', '<'))
@@ -74,7 +74,7 @@ class Cache_buster
    // This function describes how the plugin is used.
    //  Make sure and use output buffering
 
-   function usage()
+   public static function usage()
    {
       ob_start(); 
 ?>
