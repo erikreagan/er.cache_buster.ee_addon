@@ -49,7 +49,7 @@ class Cache_buster
          $file = ($this->EE->TMPL->fetch_param('file') != '') ? $this->EE->TMPL->fetch_param('file') : FALSE ;
          $separator = ($this->EE->TMPL->fetch_param('separator') != '') ? $this->EE->TMPL->fetch_param('separator') : '?v=' ;
          $root_path = ($this->EE->TMPL->fetch_param('root_path') != '') ? $this->EE->TMPL->fetch_param('root_path') : $_SERVER['DOCUMENT_ROOT'] ;
-         $time = filemtime($root_path.$this->EE->security->xss_clean(html_entity_decode($file)));
+         $time = filemtime($root_path.ee('Security/XSS')->clean(html_entity_decode($file)));
          
       }
 
