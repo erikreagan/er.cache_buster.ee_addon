@@ -3,7 +3,7 @@
 
 /**
  * Cache Buster
- * 
+ *
  * This file must be placed in the
  * system/plugins/ folder in your ExpressionEngine installation.
  *
@@ -17,7 +17,7 @@
 
 $plugin_info       = array(
    'pi_name'        => 'Cache Buster',
-   'pi_version'     => '1.1.1',
+   'pi_version'     => '1.2.0',
    'pi_author'      => 'Erik Reagan',
    'pi_author_url'  => 'http://erikreagan.com',
    'pi_description' => 'Adds a simple cache buster to your flat file references',
@@ -31,29 +31,29 @@ class Cache_buster
 
    public function Cache_buster()
    {
-      
+
       if (version_compare(APP_VER, '2', '<'))
       {
-         
+
          global $REGX, $TMPL;
 
          $file = ($TMPL->fetch_param('file') != '') ? $TMPL->fetch_param('file') : FALSE ;
          $separator = ($TMPL->fetch_param('separator') != '') ? $TMPL->fetch_param('separator') : '?v=' ;
          $root_path = ($TMPL->fetch_param('root_path') != '') ? $TMPL->fetch_param('root_path') : $_SERVER['DOCUMENT_ROOT'] ;
          $time = filemtime($root_path.$REGX->xss_clean(html_entity_decode($file)));
-         
+
       } else {
-         
+
          $this->EE =& get_instance();
-         
+
          $file = ($this->EE->TMPL->fetch_param('file') != '') ? $this->EE->TMPL->fetch_param('file') : FALSE ;
          $separator = ($this->EE->TMPL->fetch_param('separator') != '') ? $this->EE->TMPL->fetch_param('separator') : '?v=' ;
          $root_path = ($this->EE->TMPL->fetch_param('root_path') != '') ? $this->EE->TMPL->fetch_param('root_path') : $_SERVER['DOCUMENT_ROOT'] ;
-         $time = filemtime($root_path.$this->EE->security->xss_clean(html_entity_decode($file)));
-         
+         $time = filemtime($root_path.ee('Security/XSS')->clean(html_entity_decode($file)));
+
       }
 
-      
+
       if ($file)
       {
          $return = $file;
@@ -76,7 +76,7 @@ class Cache_buster
 
    public static function usage()
    {
-      ob_start(); 
+      ob_start();
 ?>
 
 Using ExpressionEngine's CSS template provides a nice cache buster string of the most recent time
@@ -107,7 +107,7 @@ This will return
 <?php
       $buffer         = ob_get_contents();
 
-      ob_end_clean(); 
+      ob_end_clean();
 
       return $buffer;
    }
